@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Hero</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+    <link rel="stylesheet" type="text/css" href="~/Content/odometer-theme-minimal.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800" rel="stylesheet">
+
+
+
+</head>
+<body>
+    <div id="background"></div>
+    <div id="rainbow-bg"></div>
+    <div id="sun-bg">
+        <div id="sun"></div>
+    </div>
+    <div id="cloud-bg">
+        <div class="x1">
+            <div class="cloud"></div>
+        </div>
+
+        <div class="x2">
+            <div class="cloud"></div>
+        </div>
+
+        <div class="x3">
+            <div class="cloud"></div>
+        </div>
+
+        <div class="x4">
+            <div class="cloud"></div>
+        </div>
+
+        <div class="x5">
+            <div class="cloud"></div>
+        </div>
+    </div>
+
+    <div class="top-space"></div>
+    <div class="score-container">
+        <span>Hits:  <span id="hits" class="odometer">0</span></span>
+        <span>Misses:  <span id="misses" class="odometer">0</span></span>
+    </div>
+
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-body">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <div class="note-key-container">
+        <div class="note-container">
+            <div class="note-column column-1"></div>
+            <div class="note-column column-2"></div>
+            <div class="note-column column-3"></div>
+            <div class="note-column column-4"></div>
+            <div class="note-column column-5"></div>
+            <div class="note-column column-6"></div>
+            <div class="note-column column-7"></div>
+            <div class="note-column column-8"></div>
+        </div>
+        <div class="key-container">
+            <div class="key key-1"><span class="key-character">T</span></div>
+            <div class="key key-2"><span class="key-character">Y</span></div>
+            <div class="key key-3"><span class="key-character">U</span></div>
+            <div class="key key-4"><span class="key-character">I</span></div>
+            <div class="key key-5"><span class="key-character">O</span></div>
+            <div class="key key-6"><span class="key-character">P</span></div>
+            <div class="key key-7"><span class="key-character">[</span></div>
+            <div class="key key-8"><span class="key-character">]</span></div>
+        </div>
+    </div>
+
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+
+            window.odometerOptions = {
+                duration: 300, // Change how long the javascript expects the CSS animation to take
+            };
+
+
+    </script>
+
+
+    <script type="text/javascript" src="~/Scripts/odometer.min.js"></script>
+
+    
+
+
+</body>
+</html>
